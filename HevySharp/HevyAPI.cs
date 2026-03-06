@@ -27,7 +27,7 @@ public class HevyAPI
         client = httpClient;
     }
 
-    // ── Authentication ────────────────────────────────────────────
+    //Authentication
 
     public async Task<bool> AuthoriseHevy(string apiKey)
     {
@@ -39,7 +39,7 @@ public class HevyAPI
         return IsAuthorised;
     }
 
-    // ── User ──────────────────────────────────────────────────────
+    //User
 
     public async Task<HevyUserInfo?> GetUserInfo()
     {
@@ -50,7 +50,7 @@ public class HevyAPI
         return JsonSerializer.Deserialize<HevyUserInfo>(json, JsonOptions);
     }
 
-    // ── Workouts ──────────────────────────────────────────────────
+    //Workouts
 
     public async Task<PaginatedWorkoutResponse?> GetWorkouts(int page = 1, int pageSize = 5)
     {
@@ -115,7 +115,7 @@ public class HevyAPI
         return JsonSerializer.Deserialize<PaginatedWorkoutEventResponse>(json, JsonOptions);
     }
 
-    // ── Routines ──────────────────────────────────────────────────
+    // Routines
 
     public async Task<PaginatedRoutineResponse?> GetRoutines(int page = 1, int pageSize = 5)
     {
@@ -162,7 +162,7 @@ public class HevyAPI
         return JsonSerializer.Deserialize<HevyRoutine>(json, JsonOptions);
     }
 
-    // ── Routine Folders ───────────────────────────────────────────
+    //Routine Folders
 
     public async Task<PaginatedRoutineFolderResponse?> GetRoutineFolders(int page = 1, int pageSize = 5)
     {
@@ -194,7 +194,7 @@ public class HevyAPI
         return JsonSerializer.Deserialize<HevyRoutineFolder>(json, JsonOptions);
     }
 
-    // ── Exercise Templates ────────────────────────────────────────
+    //Exercise Templates
 
     public async Task<PaginatedExerciseTemplateResponse?> GetExerciseTemplates(int page = 1, int pageSize = 5)
     {
@@ -226,7 +226,7 @@ public class HevyAPI
         return JsonSerializer.Deserialize<HevyExerciseTemplate>(json, JsonOptions);
     }
 
-    // ── Exercise History ──────────────────────────────────────────
+    // Exercise History
 
     public async Task<HevyExerciseHistory?> GetExerciseHistory(string exerciseTemplateId, int page = 1, int pageSize = 5)
     {
@@ -237,7 +237,7 @@ public class HevyAPI
         return JsonSerializer.Deserialize<HevyExerciseHistory>(json, JsonOptions);
     }
 
-    // ── Helpers ───────────────────────────────────────────────────
+    //Helpers
 
     private void EnsureAuthorised()
     {
