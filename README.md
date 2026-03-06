@@ -4,7 +4,7 @@
   <strong>HevySharp</strong>
 </p>
 
-A lightweight .NET 10 wrapper for the [Hevy API]([https://api.hevyapp.com](https://api.hevyapp.com/docs/#/)), giving you typed access to workouts, routines, exercise templates, and more from your C# applications.
+A lightweight .NET 10 wrapper for the Hevy API, giving you typed access to workouts, routines, exercise templates, and more from your C# applications.
 
 > **Requires** a [Hevy Pro](https://www.hevy.com) subscription. Generate your API key at [hevy.com/settings?developer](https://hevy.com/settings?developer).
 
