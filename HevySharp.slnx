@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="HevySharp/HevySharp.csproj" />
+  <Project Path="HevySharpTests/HevySharpTests.csproj" />
+</Solution>
