@@ -1,4 +1,8 @@
-# HevySharp
+<p align="center">
+  <img src="hevysharplogo.png" alt="HevySharp Logo" width="200">
+  <br>
+  <strong>HevySharp</strong>
+</p>
 
 A lightweight .NET 10 wrapper for the [Hevy API](https://api.hevyapp.com), giving you typed access to workouts, routines, exercise templates, and more from your C# applications.
 
