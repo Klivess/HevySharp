@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -13,9 +13,10 @@
 		<Version>1.0.0</Version>
 		<Authors>Klives</Authors>
 		<Company>Klives Management</Company>
-		<Description>A lightweight .NET 10 wrapper for the Hevy API, giving you typed access to workouts, routines, exercise templates, and more from your C# applications.</Description>
+		<Description>A lightweight .NET wrapper for the Hevy API, giving you typed access to workouts, routines, exercise templates, and more from your C# applications.</Description>
 		<RepositoryUrl>https://github.com/Klivess/HevySharp</RepositoryUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 	
 	
