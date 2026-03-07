@@ -7,11 +7,11 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    
     permissions:
       contents: read
       packages: write
-      # This permission is required for Trusted Publishing (OIDC)
-      id-token: write 
+      id-token: write  # <--- REQUIRED for Trusted Publishing
 
     steps:
       - uses: actions/checkout@v4
@@ -19,9 +19,8 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x' # Change to your .NET version
+          dotnet-version: '8.0.x' 
 
-      # Step to extract version from the release tag (e.g., v1.0.0 -> 1.0.0)
       - name: Set Version
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
@@ -34,6 +33,11 @@ jobs:
       - name: Pack
         run: dotnet pack --configuration Release --no-build --output ./nupkgs -p:PackageVersion=${{ env.VERSION }}
 
+      - name: Publish to NuGet (Trusted)
+        uses: nuget/login@v1
+        with:
+          source-url: https://api.nuget.org/v3/index.json
+          expiration-in-seconds: 1800
+
       - name: Publish to NuGet
         run: dotnet nuget push ./nupkgs/*.nupkg --source https://api.nuget.org/v3/index.json
-        # No API key needed here! The setup-dotnet action handles authentication automatically via OIDC.
