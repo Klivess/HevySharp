@@ -15,8 +15,8 @@
 		<Company>Klives Management</Company>
 		<Description>A lightweight .NET wrapper for the Hevy API, giving you typed access to workouts, routines, exercise templates, and more from your C# applications.</Description>
 		<RepositoryUrl>https://github.com/Klivess/HevySharp</RepositoryUrl>
+		<PackageIconUrl>https://github.com/Klivess/HevySharp/blob/master/hevysharplogo.png</PackageIconUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 	
 	
