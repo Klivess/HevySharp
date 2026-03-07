@@ -33,11 +33,11 @@ jobs:
       - name: Pack
         run: dotnet pack --configuration Release --no-build --output ./nupkgs -p:PackageVersion=${{ env.VERSION }}
 
-      - name: Publish to NuGet (Trusted)
-        uses: nuget/login@v1
-        with:
-          source-url: https://api.nuget.org/v3/index.json
-          expiration-in-seconds: 1800
+      - name: Publish to NuGet
+        run: dotnet nuget push ./nupkgs/*.nupkg \
+          --source https://api.nuget.org/v3/index.json \
+          --api-key "${{ secrets.NUGET_API_KEY }}" \
+          --skip-duplicate
 
       - name: Publish to NuGet
         run: dotnet nuget push ./nupkgs/*.nupkg --source https://api.nuget.org/v3/index.json
