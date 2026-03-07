@@ -1,3 +1,4 @@
+
 name: Publish to NuGet
 
 on:
@@ -10,8 +11,8 @@ jobs:
     
     permissions:
       contents: read
-      packages: write
-      id-token: write  # <--- REQUIRED for Trusted Publishing
+      # 'id-token: write' is only needed for Trusted Publishing (OIDC).
+      # Since you are using secrets.NUGET_API_KEY, it is not required.
 
     steps:
       - uses: actions/checkout@v4
@@ -34,7 +35,8 @@ jobs:
         run: dotnet pack --configuration Release --no-build --output ./nupkgs -p:PackageVersion=${{ env.VERSION }}
 
       - name: Publish to NuGet
-        run: dotnet nuget push ./nupkgs/*.nupkg \
-          --source https://api.nuget.org/v3/index.json \
-          --api-key "${{ secrets.NUGET_API_KEY }}" \
-          --skip-duplicate
+        run: |
+          dotnet nuget push ./nupkgs/*.nupkg \
+            --source https://api.nuget.org/v3/index.json \
+            --api-key "${{ secrets.NUGET_API_KEY }}" \
+            --skip-duplicate
