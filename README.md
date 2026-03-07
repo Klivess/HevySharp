@@ -2,7 +2,14 @@
   <img src="hevysharplogo.png" alt="HevySharp Logo" width="200">
   <br>
   <strong>HevySharp</strong>
+  
 </p>
+
+![alt text](https://img.shields.io/nuget/v/HevySharp)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/HevySharp.svg)](https://www.nuget.org/packages/HevySharp/)
+![alt text](https://img.shields.io/github/stars/Klivess/HevySharp?style=social)
+![alt text](https://img.shields.io/github/forks/Klivess/HevySharp?style=social)
+![alt text](https://img.shields.io/github/license/Klivess/HevySharp)
 
 A lightweight .NET 10 wrapper for the Hevy API, giving you typed access to workouts, routines, exercise templates, and more from your C# applications.
 
