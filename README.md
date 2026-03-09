@@ -155,7 +155,7 @@ HevySharp/
 
 ## Requirements
 
-- **.NET 10** (or later)
+- .NET 8/9/10.
 - A **Hevy Pro** subscription with a developer API key
 
 ## Full Documentation
